@@ -1,0 +1,17 @@
+# Site settings
+title: muumu.us
+description: >
+    muumu.us
+author: Kyle Johnston
+email: kylerjohnston@gmail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://muumu.us" # the base hostname & protocol for your site
+twitter_username: becoming_yolo
+github_username:  kylerjohnston
+
+# Build settings
+include: [_pages]
+markdown: kramdown
+permalink: /:year/:month/:title/
+sass:
+    style: compressed
