@@ -6,7 +6,6 @@ categories:
 - sysadmin
 tags: 
 ---
-
 Yesterday I discovered a cool program called `ldd` that ships with the GNU C library. `ldd` prints the shared libraries used by a program.
 
 Running `ldd /usr/bin/which`, for example, returns:
