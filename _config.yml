@@ -7,6 +7,10 @@ email: kylerjohnston@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://muumu.us" # the base hostname & protocol for your site
 github_username:  kylerjohnston
+exclude:
+  - org/
+  - LICENSE
+  - push_to_s3.sh
 
 # Build settings
 #include: [_pages]
