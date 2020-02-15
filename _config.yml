@@ -13,6 +13,7 @@ exclude:
   - push_to_s3.sh
   - Rakefile
   - Gemfile*
+  - forspell.dict
 
 # Build settings
 #include: [_pages]
