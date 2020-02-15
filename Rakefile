@@ -11,4 +11,5 @@ task :test do
     enforce_https: true
   }
   HTMLProofer.check_directory("./_site", options).run
+  sh 'forspell -c forspell.dict _posts/*.md'
 end
