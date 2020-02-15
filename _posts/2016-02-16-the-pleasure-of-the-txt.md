@@ -13,7 +13,7 @@ LaTeX is overkill for most of what we write in the humanities. LaTeX is great if
 
 ## How I write
 
-For the rest of this post, I’m going to describe my particular set up for writing in the humanities. I write *everything* in Markdown---from seminar papers and syllabi to lesson plans, notes, and this blog post---and rely on the powerful [Pandoc](http://pandoc.org) utility to convert my Markdown files into formatted documents---mostly PDFs and HTML files.
+For the rest of this post, I’m going to describe my particular set up for writing in the humanities. I write *everything* in Markdown---from seminar papers and syllabi to lesson plans, notes, and this blog post---and rely on the powerful [Pandoc](https://pandoc.org) utility to convert my Markdown files into formatted documents---mostly PDFs and HTML files.
 
 ### Prerequisites
 
@@ -21,9 +21,9 @@ I write on a mid-2012 Macbook Pro. My instructions below are specific to OS X, b
 
 * **A plain text editor**. This can be something as simple as TextEdit on a Mac or Notepad on Windows. There are also, at least for OS X, several editors made specifically for editing markdown and targeted at writers, such as ByWord, iA Writer, and WriteRoom. If you don’t write code, these might be your best bets---I’ve had good results with ByWord in the past. More advanced options like Atom, Sublime Text, Emacs, and Vim will be more customizable and support advanced features like syntax highlighting and autocompletion.  I use Vim and MacVim because I've invested time learning to use them but you should feel free to try out several editors---Vim has a steep (but rewarding!) learning curve, and you should use whatever editor works best for you.
 
-* **Pandoc**. [Pandoc](http://pandoc.org) is a utility that can convert Markdown documents to basically any other format you want. 
+* **Pandoc**. [Pandoc](https://pandoc.org) is a utility that can convert Markdown documents to basically any other format you want. 
 
-* **A LaTeX installation**. Pandoc needs a LaTeX installation to convert your files to PDFs. If you’re on OS X, [MacTeX](http://tug.org/mactex/) is what you want. The BasicTex package will suffice, but I’d recommend installing the [TeX Live Utility](http://amaxwell.github.io/tlutility/) too if you go that route (it’s included with the full MacTeX package). After installing your TeX package, open the TeX Live Utility and update all packages.
+* **A LaTeX installation**. Pandoc needs a LaTeX installation to convert your files to PDFs. If you’re on OS X, [MacTeX](https://tug.org/mactex/) is what you want. The BasicTex package will suffice, but I’d recommend installing the [TeX Live Utility](https://amaxwell.github.io/tlutility/) too if you go that route (it’s included with the full MacTeX package). After installing your TeX package, open the TeX Live Utility and update all packages.
 
 * **My MLA Pandoc templates**. Pandoc still isn’t that popular of a tool in the humanities. I couldn’t find any MLA templates for Pandoc, so I made my own. They rely on the [mla-paper](https://www.ctan.org/pkg/mla-paper) LaTeX package which comes with MacTeX. You can [download them from Github](https://github.com/kylerjohnston/pandoc-templates).
 
