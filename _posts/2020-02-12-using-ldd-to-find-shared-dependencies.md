@@ -5,6 +5,8 @@ layout: post
 categories: 
 - sysadmin
 tags: 
+- sysadmin 
+- chroot
 ---
 Yesterday I discovered a cool program called `ldd` that ships with the GNU C library. `ldd` prints the shared libraries used by a program.
 

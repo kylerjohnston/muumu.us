@@ -1,0 +1,14 @@
+---
+layout: page
+---
+<section class="c-archives">
+  <h2 class="c-archives__category">posts about <span class="c-tag-heading">{{ page.title }}</span></h2>
+  <ul class="c-archives__list">
+    {% for post in page.posts %}
+    <li class="c-archives__item">
+      <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+      <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -3,6 +3,7 @@
 #+DATE: 2020-02-09
 #+JEKYLL_CATEGORIES: ruby 
 #+JEKYLL_LAYOUT: post
+#+JEKYLL_TAGS: ruby
 
 Enumerators are objects that yield things to a code block.
 

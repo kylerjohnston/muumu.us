@@ -14,3 +14,10 @@
         content: '#\2009';
     }
 }
+
+.c-tag-heading {
+    &:before {
+	color: $c-base__0;
+	content: '#\2009';
+    }
+}

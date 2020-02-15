@@ -6,6 +6,8 @@ categories:
 - sysadmin 
 - networking
 tags: 
+- sysadmin 
+- networking
 ---
 I learned this trick from a coworker today. You can use the `netmask` utility to generate subnet masks for everything but a single IP address. Let's say I want to whitelist 143.204.147.102 but whatever tool I'm using only lets me blacklist IPs. 
 

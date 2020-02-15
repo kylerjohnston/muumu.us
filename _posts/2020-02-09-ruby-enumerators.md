@@ -5,6 +5,7 @@ layout: post
 categories: 
 - ruby
 tags: 
+- ruby
 ---
 Enumerators are objects that yield things to a code block.
 

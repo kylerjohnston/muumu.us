@@ -4,7 +4,7 @@ description: >
     muumu.us
 author: Kyle Johnston
 email: kylerjohnston@gmail.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "" 
 url: "https://muumu.us" # the base hostname & protocol for your site
 github_username:  kylerjohnston
 exclude:
@@ -15,9 +15,22 @@ exclude:
   - Gemfile*
   - forspell.dict
 
+#include: [_pages]
+
+jekyll-archives:
+  enabled:
+    - tags
+  layout: archive
+  permalinks:
+    category: '/tag/:name/'
+
+# plugins
+plugins:
+  - jekyll-archives
+
 # Build settings
 #include: [_pages]
 markdown: kramdown
-permalink: /:categories/:title/
+permalink: /:year/:month/:title/
 sass:
     style: compressed

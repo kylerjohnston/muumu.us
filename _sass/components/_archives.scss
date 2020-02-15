@@ -11,6 +11,11 @@
     @include fs--heading-1;
 }
 
+.c-archives__category {
+    margin-bottom: 2.5rem;
+    @include fs--heading-1;
+}
+
 .c-archives__list {
     margin-bottom: 2.5rem;
     list-style: none;

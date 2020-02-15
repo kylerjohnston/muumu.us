@@ -37,6 +37,11 @@
     color: $c-base__01;
 }
 
+.c-article__category {
+    @include fs--body;
+    color: $c-base__01;
+}
+
 .c-article__main {
     margin-bottom: 5rem; // 50px
     @include fs--body;
