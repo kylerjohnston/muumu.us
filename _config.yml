@@ -11,6 +11,8 @@ exclude:
   - org/
   - LICENSE
   - push_to_s3.sh
+  - Rakefile
+  - Gemfile*
 
 # Build settings
 #include: [_pages]
