@@ -14,6 +14,7 @@ exclude:
   - Rakefile
   - Gemfile*
   - forspell.dict
+  - invalidate_cloudfront_cache.sh
 
 include: [_pages]
 
