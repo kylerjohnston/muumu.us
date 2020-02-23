@@ -153,4 +153,4 @@ digraph {
 
 ![img](/img/banana-bread-graph-with-rank.svg "Banana bread baking procedure node-link diagram, with ranked nodes.")
 
-This I actually like a lot, and think it would a really helpful way to understand recipes. I don't think it's a substitute for a written procedural recipe, but I do think it would be a good reference to have while you're in the process of cooking, a map to check in and see "You are here." Not bad for an hour's reading on GraphViz!
+This I actually like a lot, and think it would be a really helpful way to understand recipes. I don't think it's a substitute for a written procedural recipe, but I do think it would be a good reference to have while you're in the process of cooking, a map to check in and see "You are here." Not bad for an hour's reading on GraphViz!

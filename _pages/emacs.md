@@ -1,6 +1,6 @@
 ---
 title: "Emacs Configuration"
-date: 2020-02-15
+date: 2020-02-23
 layout: post
 categories: 
 tags: 
@@ -24,10 +24,11 @@ permalink: /emacs/
 -   [Dired](#orga0e46d0)
 -   [Company](#org7cf23a8)
 -   [Languages](#org8f92288)
+    -   [GraphViz](#orga262c1d)
     -   [LaTeX](#org6d61f8c)
+    -   [Ruby](#orgd43d610)
     -   [SaltStack](#org5aab32e)
     -   [Terraform](#org0762c5e)
-    -   [Ruby](#orgd43d610)
 -   [Magit](#org50db5a2)
 -   [Diminish](#orgb920bc6)
 -   [Ivy/Counsel/Swiper](#orgfebc188)
@@ -96,7 +97,7 @@ Stop cluttering working directories with back up files and save them to `/tmp/`.
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
 	doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-nord t)
+  (load-theme 'doom-tomorrow-night t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -197,7 +198,8 @@ By default Babel will only allow you to execute `emacs-lisp` source code blocks.
  'org-babel-load-languages
  '((emacs-lisp . t)
    (python . t)
-   (ruby . t)))
+   (ruby . t)
+   (dot . t)))
 {% endhighlight %}
 
 
@@ -245,7 +247,10 @@ This sets up Jekyll markdown export for my blog. See [this post on orgmode.org](
 (global-set-key (kbd "C-c c") 'org-capture)
 (setq org-capture-templates
       '(("b" "Blog" entry (file+headline "~/org/inbox.org" "Blog ideas")
-	 "* TITLE\n#+TITLE:\n#+DATE: %t\n#+JEKYLL_TAGS:\n#+JEKYLL_LAYOUT: post\n\n%?")))
+	 "* TITLE\n#+TITLE:\n#+DATE: %t\n#+JEKYLL_TAGS:\n#+JEKYLL_LAYOUT: post\n\n%?")
+	("d" "Divide and Conquer: Algorithms on Coursera"
+	 entry (file+headline "~/org/inbox.org" "Divide and Conquer: Algorithms on Coursera")
+	 "* %^{Title}\n#+DATE: %t\n\n%?")))
 {% endhighlight %}
 
 
@@ -274,17 +279,35 @@ Evil keybindings:
 (use-package company
   :ensure t
   :init (add-hook 'after-init-hook 'global-company-mode)
+  :bind
+  (:map company-active-map
+	("<return>" . nil)
+	("C-<return>" . company-complete-selection))
   :config
-					; No delay in showing suggestions
   (setq company-idle-delay 0)
-					; Show suggestions after entering 2 characters
-  (setq company-minimum-prefix-length 2))
+  (setq company-minimum-prefix-length 2)
+  (setq company-auto-complete 'company-explicit-action-p))
 {% endhighlight %}
 
 
 <a id="org8f92288"></a>
 
 # Languages
+
+
+<a id="orga262c1d"></a>
+
+## GraphViz
+
+{% highlight emacs-lisp %}
+(use-package graphviz-dot-mode
+  :ensure t
+  :config
+  (setq graphviz-dot-indent-width 4))
+
+(use-package company-graphviz-dot
+  :ensure t)
+{% endhighlight %}
 
 
 <a id="org6d61f8c"></a>
@@ -295,6 +318,36 @@ Recognize `.latex` files as&#x2026; LaTeX.
 
 {% highlight emacs-lisp %}
 (setq auto-mode-alist (cons '("\\.latex$" . latex-mode) auto-mode-alist))
+{% endhighlight %}
+
+
+<a id="orgd43d610"></a>
+
+## Ruby
+
+I had issues with syntax highlighting and identation breaking using `enh-ruby-mode`, so I'm back to just plain `ruby-mode`.
+
+flymake-ruby for syntax checking.
+
+{% highlight emacs-lisp %}
+(use-package flymake-ruby
+  :ensure t
+  :hook (ruby-mode . flymake-ruby-load))
+{% endhighlight %}
+
+`inf-ruby` opens `irb` in a buffer.
+
+{% highlight emacs-lisp %}
+(use-package inf-ruby
+  :ensure t)
+{% endhighlight %}
+
+`rubocop` is a linter.
+
+{% highlight emacs-lisp %}
+(use-package rubocop
+  :ensure t
+  :hook (ruby-mode . rubocop-mode))
 {% endhighlight %}
 
 
@@ -319,33 +372,6 @@ Recognize `.latex` files as&#x2026; LaTeX.
 {% highlight emacs-lisp %}
 (use-package terraform-mode
   :ensure t)
-{% endhighlight %}
-
-
-<a id="orgd43d610"></a>
-
-## Ruby
-
-Enhanced ruby mode
-
-{% highlight emacs-lisp %}
-(use-package enh-ruby-mode
-  :ensure t
-  :init
-  (add-to-list 'auto-mode-alist
-	       '("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
-  (add-to-list 'interpreter-mode-alist
-	       '("ruby" . enh-ruby-mode))
-  (add-to-list 'org-src-lang-modes
-	       '("enh-ruby" . ruby)))
-{% endhighlight %}
-
-flymake-ruby for syntax checking.
-
-{% highlight emacs-lisp %}
-(use-package flymake-ruby
-  :ensure t
-  :hook (enh-ruby-mode . flymake-ruby-load))
 {% endhighlight %}
 
 
