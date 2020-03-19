@@ -5,11 +5,13 @@ layout: post
 categories: 
 tags: 
 - cooking 
-- graphviz
+- graphviz 
+- recipes 
+- baking
 ---
-I hate reading recipes. With most recipes I find myself re-reading the process over and over again as I'm making the thing because the steps aren't presented in a way that represents the actual process of cooking. Sometimes this is due to poor writing, but often it's just due to the nature of cooking. Cooking isn't a series of entirely sequential steps. There's typically a general sequence, but among the steps of that sequence are processes that can be done asynchronously &#x2014; the water has to be boiling and the vegetables chopped before you can start making your stew, but you can be chopping vegetables while the water is heating up.
+I hate reading recipes. With most recipes I find myself re-reading the process over and over again as I&rsquo;m making the thing because the steps aren&rsquo;t presented in a way that represents the actual process of cooking. Sometimes this is due to poor writing, but often it&rsquo;s just due to the nature of cooking. Cooking isn&rsquo;t a series of entirely sequential steps. There&rsquo;s typically a general sequence, but among the steps of that sequence are processes that can be done asynchronously &#x2014; the water has to be boiling and the vegetables chopped before you can start making your stew, but you can be chopping vegetables while the water is heating up.
 
-Here is a recipe I use to make banana bread. I adapted it from the "Ultimate Banana Bread" recipe in [*The Cook's Illustrated Cookbook*](https://www.amazon.com/gp/product/1933615893/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1933615893&linkCode=as2&tag=muumuus-20&linkId=67155a99163cb1b505e8b871641a4570), ed. America's Test Kitchen (2011).
+Here is a recipe I use to make banana bread. I adapted it from the &ldquo;Ultimate Banana Bread&rdquo; recipe in [*The Cook&rsquo;s Illustrated Cookbook*](https://www.amazon.com/gp/product/1933615893/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1933615893&linkCode=as2&tag=muumuus-20&linkId=67155a99163cb1b505e8b871641a4570), ed. America&rsquo;s Test Kitchen (2011).
 
 
 ## Banana bread
@@ -47,12 +49,12 @@ Wet:
 8.  Grease loaf pan and pour banana mixture into it.
 9.  Bake for 55-75 minutes, until toothpick stuck in the middle comes out clean.
 
-I've edited the recipe to be a little more procedural, but it still doesn't feel like the best way to represent this information. Steps 1 &#x2013; 4, for example, should really all be done at the same time.
+I&rsquo;ve edited the recipe to be a little more procedural, but it still doesn&rsquo;t feel like the best way to represent this information. Steps 1 &#x2013; 4, for example, should really all be done at the same time.
 
 
 ## A better way to visualize?
 
-My first thought was to make a network diagram of the baking process where each node links to the things that depend on it. I knew [GraphViz](https://www.graphviz.org/) was a tool for making network diagrams, though I'd never played with it. This is the first graph I threw together:
+My first thought was to make a network diagram of the baking process where each node links to the things that depend on it. I knew [GraphViz](https://www.graphviz.org/) was a tool for making network diagrams, though I&rsquo;d never played with it. This is the first graph I threw together:
 
 {% highlight dot %}
 digraph {
@@ -79,7 +81,7 @@ digraph {
 
 ![img](/img/banana-bread-graph.svg "Node-link diagram of the banana bread baking procedure.")
 
-It's an interesting way to think about the recipe, but I don't think it solves the problem &#x2014; if I'm reading as I'm assembling everything, it looks like turning on the oven is one of the last things I need to do. Really, turning on the oven is one of the first things I need to do. 
+It&rsquo;s an interesting way to think about the recipe, but I don&rsquo;t think it solves the problem &#x2014; if I&rsquo;m reading as I&rsquo;m assembling everything, it looks like turning on the oven is one of the last things I need to do. Really, turning on the oven is one of the first things I need to do. 
 
 I tried grouping nodes into subcategories to make things more clear.
 
@@ -123,9 +125,9 @@ digraph {
 
 ![img](/img/banana-bread-graph-with-subcategories.svg "Banana bread baking procedure node-link diagram, with subcategories.")
 
-It's a little more clear than the first one, but the structure is still basically the same. It still doesn't visually represent the order in which things need to be done.
+It&rsquo;s a little more clear than the first one, but the structure is still basically the same. It still doesn&rsquo;t visually represent the order in which things need to be done.
 
-GraphViz lets you set certain nodes to be the same "rank." Maybe ranking together the tasks that need to be done first will help?
+GraphViz lets you set certain nodes to be the same &ldquo;rank.&rdquo; Maybe ranking together the tasks that need to be done first will help?
 
 {% highlight dot %}
 digraph {
@@ -153,4 +155,4 @@ digraph {
 
 ![img](/img/banana-bread-graph-with-rank.svg "Banana bread baking procedure node-link diagram, with ranked nodes.")
 
-This I actually like a lot, and think it would be a really helpful way to understand recipes. I don't think it's a substitute for a written procedural recipe, but I do think it would be a good reference to have while you're in the process of cooking, a map to check in and see "You are here." Not bad for an hour's reading on GraphViz!
+This I actually like a lot, and think it would be a really helpful way to understand recipes. I don&rsquo;t think it&rsquo;s a substitute for a written procedural recipe, but I do think it would be a good reference to have while you&rsquo;re in the process of cooking, a map to check in and see &ldquo;You are here.&rdquo; Not bad for an hour&rsquo;s reading on GraphViz!

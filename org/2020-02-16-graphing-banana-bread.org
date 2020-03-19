@@ -1,6 +1,6 @@
 #+TITLE: Graphing banana bread
 #+DATE: 2020-02-16
-#+JEKYLL_TAGS: cooking graphviz
+#+JEKYLL_TAGS: cooking graphviz recipes baking
 #+JEKYLL_LAYOUT: post
 
 I hate reading recipes. With most recipes I find myself re-reading the process over and over again as I'm making the thing because the steps aren't presented in a way that represents the actual process of cooking. Sometimes this is due to poor writing, but often it's just due to the nature of cooking. Cooking isn't a series of entirely sequential steps. There's typically a general sequence, but among the steps of that sequence are processes that can be done asynchronously --- the water has to be boiling and the vegetables chopped before you can start making your stew, but you can be chopping vegetables while the water is heating up.
