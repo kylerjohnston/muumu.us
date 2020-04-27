@@ -40,16 +40,19 @@ pre, code {
     border-radius: 4px;
     background: #1d1f21;
     border: 1px solid #E8E8EB;
+    -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
+    box-shadow: 3px 3px rgba(0,0,0,0.1);
     color: #c5c8c6;
     padding: 1rem;
 
     .gutter {
-        padding: 1.2rem;
-        border-right: 1px solid #E8E8EB;
+	padding: 1.2rem;
+	border-right: 1px solid #E8E8EB;
     }
 
     .code {
-        padding: 1.2rem;
+	padding: 1.2rem;
     }
 }
 span.lineno {
