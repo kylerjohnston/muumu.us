@@ -38,7 +38,7 @@ irb(main):034:0> /\\\\/.match?(string)
 => false
 {% endhighlight %}
 
-I [solved the AoC problem](https://github.com/kylerjohnston/advent-of-code-2015/tree/master/8) by reading in the strings from puzzle input character by character into arrays, rather than into strings.
+I [solved the AoC problem](https://github.com/kylerjohnston/advent-of-code-2015/tree/master/8) by reading in the strings from the puzzle input character by character into arrays, rather than into strings.
 
 That worked for the AoC problem, but this got me thinking about problems this could cause in other situations &#x2014; what if I had a form getting user input that might contain backslashes, where it would be important to know exactly what input was given?
 
