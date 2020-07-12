@@ -135,6 +135,4 @@ With all of that in place, the only thing left to do is start and enable the `mo
   become_user: root
 {% endhighlight %}
 
-Overall I&rsquo;ve been happy with Mopidy. Iris has a mature interface that should be familiar to anyone who&rsquo;s used Spotify.
-
-It was simple to set up, and a definite step up from the Bluetooth setup was using before.
+Overall I&rsquo;ve been happy with Mopidy. Iris has a mature interface that should be familiar to anyone who&rsquo;s used Spotify. It was simple to set up, and a definite step up from the Bluetooth setup was using before.

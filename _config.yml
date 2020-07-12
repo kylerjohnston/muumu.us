@@ -15,6 +15,7 @@ exclude:
   - Gemfile*
   - forspell.dict
   - invalidate_cloudfront_cache.sh
+  - README.org
 
 include: [_pages]
 

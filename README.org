@@ -1,0 +1,11 @@
+* Tasks
+
+** TODO site branding
+*** TODO open-graph image (default.html)
+*** TODO favicon
+*** TODO webmanifest colors and icon (site.webmanifest)
+*** TODO apple touch icon (default.html)
+*** TODO theme color (default.html)
+** TODO handling images
+See if there is like an MDN guide to images??
+
