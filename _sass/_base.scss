@@ -11,6 +11,10 @@ summary {
   width: 100%;
 }
 
+body {
+    background: $background;
+}
+
 main {
   display: block;
   margin: 0 auto;
@@ -19,13 +23,15 @@ main {
 }
 
 footer {
-  border-top: $border;
   padding: $md-pad 0;
-  text-align: center;
 
   p {
     margin-bottom: 0;
   }
+}
+
+header.nav {
+    border-bottom: $border;
 }
 
 hr {
@@ -64,4 +70,15 @@ embed,
 iframe,
 video {
   border: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 1em;
+}
+
+li.tag {
+    list-style: '#';
+    float: left;
+    margin-left: 1em;
 }

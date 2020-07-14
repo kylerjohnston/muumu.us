@@ -12,19 +12,20 @@ $small-breakpoint: 400px !default;
 $large-breakpoint: 768px !default;
 
 //Colors
-$primary: #007bff !default;
+$primary: #2d60b4 !default;
 $accent: #64ffda !default;
 $red: #f44336 !default;
 $yellow: #ffeb3b !default;
-$grey: #f7f7f9 !default;
-$white: #fff !default;
-$black: #000 !default;
+$grey: #ebebeb !default;
+$white: #f5f5f5 !default;
+$black: #141613 !default;
+$background: #f5f5f5 !default;
 
 //Text
-$text: rgba(0, 0, 0, 0.8) !default;
+$text: $black !default;
 $secondary: rgba(0, 0, 0, 0.54) !default;
 $disabled: rgba(0, 0, 0, 0.38) !default;
-$dividers: rgba(0, 0, 0, 0.12) !default;
+$dividers: $black !default;
 
 //Links
 $link-color: $primary !default;

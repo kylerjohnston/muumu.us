@@ -1,7 +1,7 @@
 # Site settings
 title: muumu.us
 description: >
-    muumu.us
+    a personal web presence
 author: Kyle Johnston
 email: kylerjohnston@gmail.com
 baseurl: "" 
@@ -15,6 +15,7 @@ exclude:
   - Gemfile*
   - forspell.dict
   - invalidate_cloudfront_cache.sh
+  - README.org
 
 include: [_pages]
 

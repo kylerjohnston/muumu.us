@@ -15,27 +15,27 @@
 	<link rel="apple-touch-icon" href="icon.png">
 	<meta name="theme-color" content="#fafafa">
 
-	<link rel="stylesheet" href="css/marxed.css">
+	<link rel="stylesheet" href="/css/marxed.css">
     </head>
     <body>
-	<header>
-	    {% if page.title == 'Home' %}
-	    <h1>{{ site.description }}</h1>
-	    {% endif %}
-	    <nav>
-		<ul>
-		    <li><a href="{{ "/" | prepend: site.baseurl }}">blog</a></li>
-		    <li><a href="/emacs/">emacs</a></li>
-		    <li><a href="{{ '/feed.xml' }}">rss</a></li>
-		</ul>
-	    </nav>
-	</header>
 	<main>
+	    <header class="nav">
+		{% if page.title == 'Home' %}
+		<h1>{{ site.description }}</h1>
+		{% endif %}
+		<nav>
+		    <ul>
+			<li><a href="{{ "/" | prepend: site.baseurl }}">blog</a></li>
+			<li><a href="/emacs/">emacs</a></li>
+			<li><a href="{{ '/feed.xml' }}">rss</a></li>
+		    </ul>
+		</nav>
+	    </header>
 	    {{ content }}
+	    <footer>
+		<p>&copy; {{ site.author | downcase }} 2016&ndash;{{ 'now' | date: '%Y' }}.</p>
+		<p>follow: {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}">twitter</a><span class="u-separate"></span>{% endif %}{% if site.github_username %}<a href="https://github.com/{{ site.github_username }}">github</a>{% endif %}.</p>
+	    </footer>
 	</main>
-	<footer>
-	    <p>&copy; {{ site.author | downcase }} 2016&ndash;{{ 'now' | date: '%Y' }}.</p>
-	    <p>follow: {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}">twitter</a><span class="u-separate"></span>{% endif %}{% if site.github_username %}<a href="https://github.com/{{ site.github_username }}">github</a>{% endif %}.</p>
-	</footer>
     </body>
 </html>
