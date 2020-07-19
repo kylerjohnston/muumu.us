@@ -31,7 +31,6 @@ plugins:
   - jekyll-archives
 
 # Build settings
-#include: [_pages]
 markdown: kramdown
 permalink: /:year/:month/:title/
 sass:
