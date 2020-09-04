@@ -1,4 +1,4 @@
-#+options: toc:nil num:nil
+#+options: toc:nil num:nil ^:nil
 #+TITLE: Hosting a small, hobbyist Django app cheaply in AWS
 #+DATE: 2020-07-04
 #+JEKYLL_TAGS: python docker aws django 
