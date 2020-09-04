@@ -2,7 +2,7 @@
 title: "Setting up Mopidy on a Raspberry Pi"
 date: 2020-05-25
 layout: post
-categories: 
+excerpt: "A couple weekends ago I set up a Mopidy server on my Raspberry Pi."
 tags: 
 - mopidy 
 - raspberry-pi 

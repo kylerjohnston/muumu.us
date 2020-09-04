@@ -2,7 +2,7 @@
 title: "Goodbye Numbers"
 date: 2020-04-29
 layout: post
-categories: 
+excerpt: "We first met Numbers in July 2014. I had graduated college that spring, and my girlfriend Jami and I had moved just a week or two earlier from Massachusetts to Urbana, Illinois where I'd be starting grad school in the fall. We already had one cat, Antigone (Tiggy for short), who I'd adopted a year earlier. We wanted another cat who Tiggy could play with when we weren't around --- we've since found out that, in general, as well as in our case, cats don't want this. But we weren't completely clueless. We had looked at cats in shelters in Massachusetts, but we knew that moving to a new apartment would be the best time to introduce the cats. We had already picked out a name. She would be called Numbers."
 tags: 
 - personal 
 - cats

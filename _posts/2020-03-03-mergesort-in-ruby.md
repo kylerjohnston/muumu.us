@@ -2,7 +2,7 @@
 title: "Implementing mergesort in Ruby"
 date: 2020-03-06
 layout: post
-categories: 
+excerpt: "Here is an implementation of mergesort I wrote in Ruby. I'll break it down in the rest of this post."
 tags: 
 - ruby 
 - algorithms

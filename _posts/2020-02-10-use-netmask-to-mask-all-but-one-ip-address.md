@@ -2,6 +2,7 @@
 title: "Use netmask to mask all but one IP address"
 date: 2020-02-10
 layout: post
+excerpt: "You can use the netmask utility to generate subnet masks for everything but a single IP address."
 categories: 
 - sysadmin 
 - networking

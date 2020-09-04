@@ -2,7 +2,7 @@
 title: "Discovering new music with Ruby"
 date: 2020-04-26
 layout: post
-categories: 
+excerpt: "tl;dr This post describes the process of writing a Ruby program to make Spotify playlists with the most popular tracks from lists of new album releases scraped from Reddit. You can see the program I ended up making here, if you don't want to read through it all: <https://github.com/kylerjohnston/nmfbot>"
 tags: 
 - ruby 
 - nmfbot

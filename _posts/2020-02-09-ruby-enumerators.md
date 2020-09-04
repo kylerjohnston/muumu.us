@@ -2,6 +2,7 @@
 title: "Ruby enumerators"
 date: 2020-02-09
 layout: post
+excerpt: "Enumerators are objects that yield things to a code block."
 categories: 
 - ruby
 tags: 

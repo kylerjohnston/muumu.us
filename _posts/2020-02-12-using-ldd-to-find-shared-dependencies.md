@@ -2,6 +2,7 @@
 title: "Using ldd to find shared dependencies"
 date: 2020-02-12
 layout: post
+excerpt: "ldd prints the shared libraries used by a program."
 categories: 
 - sysadmin
 tags: 

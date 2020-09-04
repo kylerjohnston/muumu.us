@@ -2,6 +2,7 @@
 title: "On call, fiddling with the wiki"
 date: 2020-08-09
 layout: post
+excerpt: "I'm on call this weekend, and one of our sites has been under attack from a bot net for the past 24 hours. I'm getting paged pretty frequently, which has put me off of doing anything technical in my free time. So I just laid around and baked some banana bread today, when I wasn't working."
 tags: 
 - tiddlywiki
 ---

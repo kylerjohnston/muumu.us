@@ -2,9 +2,12 @@
 title: "Building an internet-facing TiddlyWiki for my public second brain"
 date: 2020-09-04
 layout: post
+excerpt: "In this post I describe the process I took to build a digital public knowledge repository with TiddlyWiki, AWS, Node.js, and GitHub Actions."
 tags: 
 - tiddlywiki 
 - public-notes
+- github-actions
+- aws
 ---
 
 

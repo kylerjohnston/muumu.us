@@ -2,11 +2,11 @@
 title: "Ruby string literals and backslashes"
 date: 2020-05-16
 layout: post
-categories: 
+excerpt: "The past couple weeks I've been working my way through the 2015 Advent of Code problems to get more familiar with Ruby and practice applying, on a small scale, some of the OOP design patterns I've been reading in Sandi Metz's Practical Object-Oriented Design. I ran across an interesting issue on Day 8. Day 8 gives you a list of strings and a list of 'escape sequences'. Basically you need to count how many characters in each string are escape sequences."
 tags: 
 - ruby
 ---
-The past couple weeks I&rsquo;ve been working my way through the 2015 Advent of Code problems to get more familiar with Ruby and practice applying, on a small scale, some of the OOP design patterns I&rsquo;ve been reading in Sandi Metz&rsquo;s *Practical Object-Oriented Design*. I ran across an interesting issue on [Day 8](https://adventofcode.com/2015/day/8). Day 8 gives you a list of strings and a list of &ldquo;escape sequences&rdquo; &#x2014; `\"`, `\\`, and `\x[0-9a-f]{2}`. Basically you need to count how many characters in each string are escape sequences.
+The past couple weeks I've been working my way through the 2015 Advent of Code problems to get more familiar with Ruby and practice applying, on a small scale, some of the OOP design patterns I've been reading in Sandi Metz's *Practical Object-Oriented Design*. I ran across an interesting issue on [Day 8](https://adventofcode.com/2015/day/8). Day 8 gives you a list of strings and a list of &ldquo;escape sequences&rdquo; &#x2014; `\"`, `\\`, and `\x[0-9a-f]{2}`. Basically you need to count how many characters in each string are escape sequences.
 
 The problem I ran into is that Ruby string literals &#x2014; even single-quoted strings &#x2014; interpret `\\` as an escaped `\`. This means Ruby sees the strings assigned the values `test\test` and `test\\test` as equivalent.
 
@@ -27,7 +27,7 @@ irb(main):009:0> string2.bytes
 => [116, 101, 115, 116, 92, 116, 101, 115, 116]
 {% endhighlight %}
 
-This also means you can&rsquo;t even search strings for `\\` because it&rsquo;s already escaped &#x2014; the string, to Ruby, only has one `\`.
+This also means you can't even search strings for `\\` because it's already escaped &#x2014; the string, to Ruby, only has one `\`.
 
 {% highlight ruby %}
 irb(main):032:0> string = 'test\\test'

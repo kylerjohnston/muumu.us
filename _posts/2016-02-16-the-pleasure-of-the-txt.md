@@ -4,6 +4,7 @@ title: "The pleasure of the txt"
 date: 2016-02-16
 categories: workflows
 tags: latex pandoc writing workflows
+excerpt: "How to use the tools of computer scientists and programmers to write better in the humanities."
 --- 
 
 Microsoft Word is the de facto standard application for writing in the humanities. We write, collaborate, and disseminate our works in `.docx` format. There are lots of things to dislike about Word: its lack of portability, for one, or how it forces you to be tied into the Microsoft ecosystem, or how easily the formatting of an entire document can get messed up by dropping in a single figure or table. The biggest problem with Word, though, is that it just doesn’t match up with the way we write. Writing and typesetting are different, distinct parts of the writing process, but in Word they are combined into one task. As we write we must also always be formatting, thinking not just about our words but about how they will appear on the paper. We fiddle with fonts and line spacing and ligatures when we should be getting down words.
