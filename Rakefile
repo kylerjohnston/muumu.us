@@ -13,7 +13,7 @@ task :test do
       'https://localhost/'
     ],
     typhoeus: {
-      connectiontimeout: 30,
+      connecttimeout: 30,
       timeout: 30
     },
     hydra: {
