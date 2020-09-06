@@ -12,6 +12,10 @@ task :test do
       /(api|accounts)\.spotify\.com/,
       'https://localhost/'
     ],
+    typhoeus: {
+      connectiontimeout: 30,
+      timeout: 30
+    },
     hydra: {
       # Failing with timeouts if this is not set.
       # This number could be finessed more, if I need to speed up tests.
