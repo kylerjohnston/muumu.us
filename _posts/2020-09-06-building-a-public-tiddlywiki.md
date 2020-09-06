@@ -1,6 +1,6 @@
 ---
 title: "Building an internet-facing TiddlyWiki for my public second brain"
-date: 2020-09-04
+date: 2020-09-06
 layout: post
 excerpt: "In this post I describe the process I took to build a digital public knowledge repository with TiddlyWiki, AWS, Node.js, and GitHub Actions."
 tags: 
@@ -15,7 +15,7 @@ tags:
 
 For the past few weeks, in my free time, I've been working on [public-notes.muumu.us](https://public-notes.muumu.us).
 
-The goal of this project is to have a public digital repository for all of my knowledge --- project notes, one-off thoughts, bookmarks, lists of books I've read or want to read, etc. Something like a digital [commonplace book](https://en.wikipedia.org/wiki/Commonplace_book). I see it as both a productivity hack (a great way to take and find notes) and a literary project.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+The goal of this project is to create a public digital repository for all of my knowledge --- project notes, one-off thoughts, bookmarks, lists of books I've read or want to read, etc. Something like a digital [commonplace book](https://en.wikipedia.org/wiki/Commonplace_book). I see it as both a productivity hack (a great way to take and find notes) and a literary project.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
 
 I evaluated many software options for the project and ultimately ended up choosing [TiddlyWiki](https://tiddlywiki.com/) because:
 
@@ -28,7 +28,7 @@ In the rest of this post I'll describe the several approaches I took to implemen
 
 ## Figuring out the right implementation
 
-TiddlyWiki is a weird piece of software. A JavaScript application written by [Jeremy Ruston](https://jermolene.com/ "Jeremy Ruston"), older iterations of it shipped as a single HTML file with inline scripts and data. It was intended to be used as a personal notebook; you saved the HTML file to your computer (or a USB drive or DropBox, if you wanted to use it across multiple devices), updated the notebook by interacting with the file in your web browser, and then saved any changes by downloading a new copy, overwriting the outdated HTML file.
+TiddlyWiki is a weird piece of software. Older iterations of it shipped as a single HTML file with inline JavaScript and data. It was intended to be used as a personal notebook; you saved the HTML file to your computer (or a USB drive or DropBox, if you wanted to use it across multiple devices), updated the notebook by interacting with the file in your web browser, and then saved any changes by downloading a new copy, overwriting the outdated HTML file.
 
 TiddlyWiki5 is a ["reboot of TiddlyWiki for the next 25 years"](https://tiddlywiki.com/#TiddlyWiki5 "TiddlyWiki5 - a reboot of TiddlyWiki") which can also run as a Node.js application in a client-server model. Running in this mode, TiddlyWiki stores each note (or "tiddler", in TW-speak) in a separate text file, using a custom markup DSL that's close to, but not, markdown, and the node process renders those tiddlers into the page you see in your browser. Any changes you make on the client side are pushed to the server. It has some basic user management and access control features.
 
@@ -138,7 +138,7 @@ So I pivoted to a new idea: I'd run two TiddlyWiki processes, one for private ed
 
 Even though the public TiddlyWiki was read-only, it still tried to modify the `$__StoryList.tid` tiddler, so I cloned the repo for my tiddlers into two locations on my filesystem to avoid conflicts, `/srv/private` for the private TiddlyWiki and `/srv/public` for the public one. I set a cron job to run once a day to commit and push all changes from `/srv/private`, and another cron to do a pull and hard reset into `/srv/public`. Since a TiddlyWiki process can't see changes made to tiddlers on the filesystem, I set another cron to restart the public TiddlyWiki process after pulling the changes.
 
-I quickly encountered a frustrating bug with this approach. As an anonymous user, every so often the TiddlyWiki would "reset" --- all of the active tiddlers I had open would just disappear. After playing around with it a bit, I discovered it was happening a couple seconds after I clicked one of the buttons to hide or show transclusions at the bottom of a tiddler. This is a feature implemented by the Stroll plugin. I also noticed that the "Sync" icon on the sidebar would flash red when it happened. It seemed that hiding or showing the transclusions wasn't just some client-side JavaScript, but was actually changing the state of the tiddler, and since the user didn't have write privileges it would just revert the changes (and reset the whole state back to a fresh TiddlyWiki with no open tiddlers). I did some further testing with the writeable TiddlyWiki and confirmed that toggling whether a transclusion is shown or hidden does indeed make a persistent change to the tiddler's state.
+I quickly encountered a frustrating bug with this approach. As an anonymous user, every so often the TiddlyWiki would "reset" --- all of the active tiddlers I had open would just disappear. After playing around with it a bit, I discovered it was happening a couple seconds after I clicked one of the buttons to hide or show transclusions at the bottom of a tiddler. This is a feature implemented by the Stroll plugin. I also noticed that the "Sync" icon on the sidebar would flash red when it happened. It seemed that hiding or showing the transclusions wasn't just some client-side JavaScript, but was actually changing the state of the tiddler, and since the user didn't have write privileges it would revert the changes (and reset the whole state back to a fresh TiddlyWiki with no open tiddlers). I did some further testing with the writeable TiddlyWiki and confirmed that toggling whether a transclusion is shown or hidden does indeed make a persistent change to the tiddler's state.
 
 ### Why do read-only users need Node?
 This was not an acceptable user experience. I couldn't have it so that users could click a button --- a button that looks like it should be clicked! --- and reset all their open tiddlers.
@@ -220,7 +220,7 @@ But there are also a lot of things I dislike about TiddlyWiki:
 
 I think the root of all of these issues is that TiddlyWiki wasn't really made to be a web app --- it's a personal knowledge management system that's made to be used on your desktop, and you can sort of hack it to work on the web like I did.
 
-For now, TiddlyWiki does the job and allows me to push out an MVP of the public-notes project. But I think there is a lot of room for improvement, and at some point I'm going to be forced to build my own app as a replacement, if only because the wiki is going to grow too large. Despite the abundance of note taking applications these days, I still think there's a big niche here waiting to be filled by something that can offer a TiddlyWiki-like experience, but is web-first.
+For now, TiddlyWiki does the job and allows me to push out an MVP of the public-notes project. But I think there is a lot of room for improvement, and at some point I'm going to be forced to build my own app as a replacement, if only because the wiki is going to grow too large. Despite the abundance of note taking applications these days, I still think there's a niche here waiting to be filled by something that can offer a TiddlyWiki-like experience, but is web-first.
 
 ## Footnotes
 
