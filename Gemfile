@@ -8,6 +8,5 @@ gem 'jekyll-archives'
 group :test, :devel do
   gem 'rake'
   gem 'html-proofer'
-  gem 'forspell'
   gem 'kramdown-parser-gfm'
 end

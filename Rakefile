@@ -8,8 +8,15 @@ task :test do
     assume_extension: true,
     check_favicon: true,
     check_html: true,
-    enforce_https: true
+    url_ignore: [
+      /(api|accounts)\.spotify\.com/,
+      'https://localhost/'
+    ],
+    hydra: {
+      # Failing with timeouts if this is not set.
+      # This number could be finessed more, if I need to speed up tests.
+      max_concurrency: 10
+    }
   }
   HTMLProofer.check_directory("./_site", options).run
-  sh 'forspell -c forspell.dict _posts/*.md'
 end

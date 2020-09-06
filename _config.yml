@@ -16,6 +16,7 @@ exclude:
   - forspell.dict
   - invalidate_cloudfront_cache.sh
   - README.org
+  - bundle/
 
 include: [_pages]
 

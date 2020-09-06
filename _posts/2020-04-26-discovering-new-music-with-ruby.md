@@ -55,7 +55,7 @@ def wiki_pages
 end
 {% endhighlight %}
 
-This method just wraps a call to [Redd::Client#get](https://rubydoc.info/github/avinashbot/redd/master/Redd/Client#get-instance_method) in order to GET [/r/${subreddit}/wiki/pages](https://www.reddit.com/dev/api/#GET_wiki_pages), an endpoint that returns a list of wiki pages associated with a subreddit.
+This method just wraps a call to `Redd::Client#get` in order to `GET` [/r/${subreddit}/wiki/pages](https://www.reddit.com/dev/api/#GET_wiki_pages), an endpoint that returns a list of wiki pages associated with a subreddit.
 
 Following the Redd README, you create a new session like this:
 
