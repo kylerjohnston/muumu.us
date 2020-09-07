@@ -24,3 +24,8 @@ task :test do
   }
   HTMLProofer.check_directory("./_site", options).run
 end
+
+task :publish do
+  sh 'push_to_s3.sh'
+  sh 'invalidate_cloudfront_cache.sh'
+end
