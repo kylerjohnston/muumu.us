@@ -26,6 +26,6 @@ task :test do
 end
 
 task :publish do
-  sh 'push_to_s3.sh'
-  sh 'invalidate_cloudfront_cache.sh'
+  sh './push_to_s3.sh'
+  sh './invalidate_cloudfront_cache.sh'
 end
