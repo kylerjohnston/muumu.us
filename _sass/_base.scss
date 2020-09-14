@@ -1,6 +1,6 @@
 main,
-header,
 footer,
+header,
 article,
 section,
 aside,
@@ -8,6 +8,12 @@ details,
 summary {
   margin: 0 auto;
   margin-bottom: $md-pad;
+  width: 100%;
+}
+
+header.post_title {
+  margin: 0 auto;
+  margin-bottom: $md-pad * 4;
   width: 100%;
 }
 
