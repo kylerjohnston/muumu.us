@@ -13,7 +13,8 @@ summary {
 
 header.post_title {
   margin: 0 auto;
-  margin-bottom: $md-pad * 4;
+  margin-bottom: $xlg-pad;
+  padding-bottom: $xlg-pad;
   width: 100%;
 }
 
@@ -37,7 +38,10 @@ footer {
 }
 
 header.nav {
-    border-bottom: $border;
+  border-bottom: $border;
+  font-family: $sans-serif;
+  font-size: 16px;
+  margin-bottom: $lg-pad;
 }
 
 hr {

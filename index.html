@@ -6,11 +6,11 @@ title: muumu.us - a personal web presence
   <p>Welcome to muumu.us, <a href="/about/">Kyle Johnston</a>'s personal web presence. I write about things that interest me here. Mostly computers, sometimes cats and music.</p>
 </section>
 <section>
-  <h1>Some things I wrote</h1>
+  <h1>Recent posts</h1>
   <ul>
     {% for post in site.posts  %}
     <li>
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> {{ post.date | date: "%B %Y" }}
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <i>{{ post.date | date: "%B %Y" }}</i>
     </li>
     {% endfor %}
   </ul>

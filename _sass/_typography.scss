@@ -10,6 +10,19 @@ p {
   margin-bottom: $md-pad;
 }
 
+ul.pub_meta {
+  margin: 0;
+  padding-left: $md-pad;
+}
+
+li.pub_meta {
+  float: left;
+  font-size: $font-size-small;
+  font-family: $serif;
+  list-style-type: disc;
+  margin-right: $lg-pad;
+}
+
 h1,
 h2,
 h3,
@@ -20,6 +33,14 @@ h6 {
   font-family: inherit;
   line-height: 1.2;
   font-weight: 500;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: italic;
 }
 
 h1 {
