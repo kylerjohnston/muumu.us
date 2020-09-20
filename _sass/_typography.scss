@@ -10,17 +10,9 @@ p {
   margin-bottom: $md-pad;
 }
 
-ul.pub_meta {
-  margin: 0;
-  padding-left: $md-pad;
-}
-
-li.pub_meta {
-  float: left;
+p.pub_meta {
   font-size: $font-size-small;
-  font-family: $serif;
-  list-style-type: disc;
-  margin-right: $lg-pad;
+  font-style: italic;
 }
 
 h1,

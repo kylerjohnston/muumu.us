@@ -11,13 +11,6 @@ summary {
   width: 100%;
 }
 
-header.post_title {
-  margin: 0 auto;
-  margin-bottom: $xlg-pad;
-  padding-bottom: $xlg-pad;
-  width: 100%;
-}
-
 body {
     background: $background;
 }
@@ -41,7 +34,7 @@ header.nav {
   border-bottom: $border;
   font-family: $sans-serif;
   font-size: 16px;
-  margin-bottom: $lg-pad;
+  margin-bottom: $xlg-pad * 2;
 }
 
 hr {
