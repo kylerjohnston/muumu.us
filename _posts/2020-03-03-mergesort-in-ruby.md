@@ -131,11 +131,12 @@ The sorted array: [-75, -70, -41, 43]
 
 You could visualize it like this:
 
-![img](/img/mergesort-graph.svg "Mergesort algorithm graphed")
+{% include image.html url="/img/2020-03-03-mergesort-in-ruby/mergesort-graph.svg"
+description="Mergesort algorithm graphed." %}
 
 I hope that makes things clear! I think I will save analyzing the runtime complexity<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> or discussions of when to use mergesort versus other sorting algorithms as exercises for the reader,  or maybe future blog posts.
 
-# Footnotes
+## Footnotes
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Assuming an initial input array of size 2 or more &#x2014; otherwise it would just return its input.
 

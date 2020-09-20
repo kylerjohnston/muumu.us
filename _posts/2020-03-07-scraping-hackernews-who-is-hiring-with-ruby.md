@@ -21,7 +21,7 @@ I want to be able to pull the data for only the jobs I care about down to my com
 In the rest of this post, I'm going to walk through my process of writing the script. I'm going to use Ruby because I'm still learning it, and I'd like an opportunity to play with its [Net::HTTP](https://ruby-doc.org/stdlib-2.6.5/libdoc/net/http/rdoc/Net/HTTP.html) and [JSON](https://ruby-doc.org/stdlib-2.6.5/libdoc/json/rdoc/JSON.html) libraries. I'm developing the script using [Babel](https://orgmode.org/worg/org-contrib/babel/) which lets you run blocks of code directly from an org document, sort of like a Jupyter notebook. This blog post itself is the actual org document I'm using to write the script &#x2014; when I'm done, I'll export it to Jekyll-compatible markdown for my blog. I'm hoping that this captures some of the thought process behind writing the script &#x2014; I'm going to develop it iteratively, circling back and refactoring things as I'm going.
 
 
-# Scraping the thread
+## Scraping the thread
 
 The first thing we need to do is get the thread using the API. I create a class for the scraper here, and initialize it with an instance variable `@threads` that I'll eventually use to store the threads I'm downloading. For now I just have the method return the response body, rather than store it in `@threads` so I can test it's working. I also test to make sure I receive a `200` response from the API &#x2014; if not, the method returns the response code instead of the response body.
 
@@ -47,7 +47,7 @@ puts scraper.get_jobs_thread('22465476').to_s
 {% endhighlight %}
 
 
-# Parsing the JSON
+## Parsing the JSON
 
 Running that returns a really big string of unprocessed JSON data that starts off like this: `{"by":"whoishiring","descendants":743,"id":22465476,"kids":[22513275,22466243...`. A string isn't a useful way to structure this data; let's parse it into something more usable with the JSON module from Ruby's standard library, which will convert the JSON into a hash. I also store the response body in the `@threads` instance variable now, and have `get_jobs_threads` always return the response code. I make `@threads` a hash of threads in the event that I want to use the script to scrape more than one thread at a time.
 
@@ -94,7 +94,7 @@ This returns:
 This matches up with the fields in the API's [documentation](https://github.com/HackerNews/API) &#x2014; that's good! The fields I care most about are `title`, which contains the title of the thread, and `kids`, which contains the item ids of the thread's children &#x2014; these are the top-level comments on the thread, i.e. the job postings.
 
 
-# Scraping the comments (the jobs)
+## Scraping the comments (the jobs)
 
 The next step is to download each job listing. I add a `@jobs` array to the class to store them, and I pull the code to make requests to the API out of `get_jobs_thread` and into its own method, `get_by_id`, since it will also need to be used in the new `get_jobs` method. Then, I loop through each item in the `thread['kids']` array and download them by item ID using the HackerNews API, pushing each response onto the `@jobs` array.
 
@@ -175,7 +175,7 @@ This outputs:
 {% endhighlight %}
 
 
-# Filtering the jobs
+## Filtering the jobs
 
 Now that we have all the jobs, I want to pull out only the ones I'm interested in. I add the following method to the `HNJobScraper` class. Given a regular expression, it loops through each job and pushes the ones with matching `text` fields to a `matches` array. Then it returns the `matches` array.
 
@@ -202,7 +202,7 @@ end
 {% endhighlight %}
 
 
-# Writing it to an org file
+## Writing it to an org file
 
 Now we have an array of all the jobs matching our search criteria, but we need a way to write that data to a file in a structured way. This class opens a file and writes the data to an org-mode file.
 
@@ -243,7 +243,7 @@ end
 {% endhighlight %}
 
 
-# Making it a reusable tool
+## Making it a reusable tool
 
 To make this a useful, reusable tool, the final thing I'm going to do is add some command line options and glue everything together.
 
@@ -300,12 +300,13 @@ end
 {% endhighlight %}
 
 
-# The end result
+## The end result
 
 [Here's the final script](https://github.com/kylerjohnston/spooky-scripts/blob/ca5a6419190b2c238463076fc80278efa944deed/one-off/hn_scraper/hn_scraper.rb).
 
-Running `./hn_scraper.rb -i 22465476 -f '(boston|remote)' -o jobs.org` returns an org file that looks like this in emacs:
+Running `./hn_scraper.rb -i 22465476 -f '(boston|remote)' -o jobs.org` returns an org file that looks like this in Emacs:
 
-![img](/img/jobs-org.png "The Who is Hiring? thread as an org-mode file")
+{% include image.html url="/img/2020-03-07-scraping-hackernews-who-is-hiring-with-ruby/jobs-org.png"
+description="The Who is Hiring? thread as an org mode file." %}
 
 It's more readable, I can quickly delete anything I don't want, and I can turn any heading into an org-mode task to track its state. I'd consider this a success.

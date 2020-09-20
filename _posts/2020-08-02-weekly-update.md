@@ -25,7 +25,7 @@ My copy of the reissue of *Green* by Hiroshi Yoshimura, that I pre-ordered in Ma
 
 Bobby seems to be doing a lot better lately, as a follow up to [this post]({% post_url 2020-07-10-breaking-bad-bobby %}). We've been following our plan with only a few modifications for three weeks now. We've gone down to feeding them five times a day, instead of six, because they were getting bored of the food.<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> We also stopped recording metrics daily because we weren't getting much value out of it &#x2014; it's pretty easy to just tell when progress is being made. And progress is being made a little bit &#x2014; we're now feeding them with the door open, with two baby gates stacked on top of each other in the doorway separating them, and a curtain draped over the gates. We start each feeding session with the curtain raised now so they can see each other, but about half the time we need to lower the curtain because Bobby gets distracted by Tiggy. I think once we're comfortable feeding with the curtain open 100% of the time for a couple weeks we'll be able to move on to the next step of opening the gate.
 
-# Footnotes
+## Footnotes
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Check this out: <https://www.youtube.com/watch?v=Wipou7sCEz4>
 

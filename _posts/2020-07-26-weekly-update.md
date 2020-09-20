@@ -1,5 +1,5 @@
 ---
-title: "Weekly update: Thoughts on Tiddlywiki and Github Actions"
+title: "Weekly update: Thoughts on TiddlyWiki and GitHub Actions"
 date: 2020-07-27
 layout: post
 excerpt: "It's been a busy weekend. On Saturday Alina and Eli stopped by on their way to a cabin they rented up north. It's the first time we've really interacted with any of our friends in person since social distancing began in March. We walked around Mackworth Island, which was surprisingly less crowded than I thought it would be. It was a pleasant day. I also brought my car to the Toyota dealership in the morning to get a state inspection --- I almost forgot about that since I rarely drive now. My brake pads failed to meet state requirements, but I was expecting that and have been putting money away each month for the better part of the last half year preparing for it. Still, it feels kind of dumb to be dropping a grand into a vehicle I almost never use now. Covid, of course, won't last forever, but I feel it's unlikely I'm ever going to be working in an office much again, or driving anywhere near as much as I used to before the virus. Still, I'm close to owning the car outright at this point and it should last another ten years, maybe more if I continue to keep my driving low."
@@ -7,7 +7,7 @@ tags:
 - tiddlywiki 
 - covid
 ---
-It's been a busy weekend. On Saturday Alina and Eli stopped by on their way to a cabin they rented up north. It's the first time we've really interacted with any of our friends in person since social distancing began in March. We walked around Mackworth Island, which was surprisingly less crowded than I thought it would be. It was a pleasant day. I also brought my car to the Toyota dealership in the morning to get a state inspection --- I almost forgot about that since I rarely drive now. My brake pads failed to meet state requirements, but I was expecting that and have been putting money away each month for the better part of the last half year preparing for it. Still, it feels kind of dumb to be dropping a grand into a vehicle I almost never use now. Covid, of course, won't last forever, but I feel it's unlikely I'm ever going to be working in an office much again, or driving anywhere near as much as I used to before the virus. Still, I'm close to owning the car outright at this point and it should last another ten years, maybe more if I continue to keep my driving low.
+It's been a busy weekend. On Saturday some friends stopped by on their way to a cabin they rented up north. It's the first time we've really interacted with any of our friends in person since social distancing began in March. We walked around Mackworth Island, which was surprisingly less crowded than I thought it would be. It was a pleasant day. I also brought my car to the Toyota dealership in the morning to get a state inspection --- I almost forgot about that since I rarely drive now. My brake pads failed to meet state requirements, but I was expecting that and have been putting money away each month for the better part of the last half year preparing for it. Still, it feels kind of dumb to be dropping a grand into a vehicle I almost never use now. Covid, of course, won't last forever, but I feel it's unlikely I'm ever going to be working in an office much again, or driving anywhere near as much as I used to before the virus. Still, I'm close to owning the car outright at this point and it should last another ten years, maybe more if I continue to keep my driving low.
 
 Sunday was mostly spent doing budgeting and housework. For a while now I've been noticing a lot of rust on our utensils. I've been cleaning it off with baking soda, but it keeps coming back. I think it may be coming from the dishwasher: there are a few spots on the dishwasher racks where the vinyl has degraded and the exposed metal has turned to rust. One of them in particular, at the intersection of three wires, has a really large rust spot at this point. This gave me an excuse to buy a Dremel, which I've been wanting for a while (I also have a cast iron pan with a lot of carbon build up that I'm trying to re-season, and I've been unable to get all the carbon off with just steel wool). I ordered that on Amazon, along with some liquid vinyl coating to paint on after I grind off the rust.
 
@@ -31,7 +31,7 @@ I'm not sure if I want to spend time (and money) doing that now, or if I want to
 
 The other thing I want to think about, regarding this site, is setting up some GitHub Actions to run tests and push to S3 when I push anything to master. I did some reading on GitHub Actions this week and they look pretty slick.
 
-# Footnotes
+## Footnotes
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> And, hopefully, my Emacs configuration.
 

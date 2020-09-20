@@ -1,0 +1,16 @@
+digraph {
+bgcolor="transparent";
+rankdir=LR;
+subgraph cluster_nginx_docker {
+label="t2.nano";
+"nginx" -> "Docker";
+}
+
+subgraph cluster_postgresql {
+label="t2.nano";
+"Docker" -> "PostgreSQL";
+}
+
+"Internet" -> "nginx";
+"Internet" -> "S3";
+}

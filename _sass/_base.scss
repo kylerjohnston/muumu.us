@@ -76,12 +76,23 @@ video {
 }
 
 nav li {
-    display: inline;
-    margin-right: 1em;
+  display: inline;
+  margin-right: 1em;
 }
 
 li.tag {
-    list-style: '#';
-    float: left;
-    margin-left: 1em;
+  list-style: '#';
+  float: left;
+  margin-left: 1em;
+}
+
+figure {
+  text-align: center;
+}
+
+figure.highlight {
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
 }

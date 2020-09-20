@@ -1,0 +1,21 @@
+digraph {
+bgcolor="transparent";
+"Heat oven" -> "Bake";
+"Defrost bananas" -> "Peel bananas";
+"Peel bananas" -> "Microwave bananas";
+"Microwave bananas" -> "Drain bananas";
+"Drain bananas" -> "Mix wet ingredients";
+"Drain bananas" -> "Reduce banana liquid";
+"Reduce banana liquid" -> "Mix wet ingredients";
+"Melt butter" -> "Mix wet ingredients";
+"Flour" -> "Mix dry ingredients";
+"Baking soda" -> "Mix dry ingredients";
+"Salt" -> "Mix dry ingredients";
+"Mix dry ingredients" -> "Mix batter";
+"Mix batter" -> "Assemble in pan";
+"Assemble in pan" -> "Bake";
+"Eggs" -> "Mix wet ingredients";
+"Brown sugar" -> "Mix wet ingredients";
+"Vanilla" -> "Mix wet ingredients";
+"Mix wet ingredients" -> "Mix batter";
+}

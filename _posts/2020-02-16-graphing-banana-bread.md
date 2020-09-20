@@ -79,7 +79,8 @@ digraph {
 }
 {% endhighlight %}
 
-![img](/img/banana-bread-graph.svg "Node-link diagram of the banana bread baking procedure.")
+{% include image.html url="/img/2020-02-16-graphing-banana-bread/banana-bread-graph.svg"
+description="Node-link diagram of the banana bread baking procedure." %}
 
 It's an interesting way to think about the recipe, but I don't think it solves the problem &#x2014; if I'm reading as I'm assembling everything, it looks like turning on the oven is one of the last things I need to do. Really, turning on the oven is one of the first things I need to do. 
 
@@ -123,7 +124,8 @@ digraph {
 }
 {% endhighlight %}
 
-![img](/img/banana-bread-graph-with-subcategories.svg "Banana bread baking procedure node-link diagram, with subcategories.")
+{% include image.html url="/img/2020-02-16-graphing-banana-bread/banana-bread-graph-with-subcategories.svg"
+description="Banana bread baking procedure node-link diagram, with subcategories." %}
 
 It's a little more clear than the first one, but the structure is still basically the same. It still doesn't visually represent the order in which things need to be done.
 
@@ -153,6 +155,7 @@ digraph {
 }
 {% endhighlight %}
 
-![img](/img/banana-bread-graph-with-rank.svg "Banana bread baking procedure node-link diagram, with ranked nodes.")
+{% include image.html url="/img/2020-02-16-graphing-banana-bread/banana-bread-graph-with-rank.svg"
+description="Banana bread baking procedure node-link diagram, with ranked nodes." %}
 
 This I actually like a lot, and think it would be a really helpful way to understand recipes. I don't think it's a substitute for a written procedural recipe, but I do think it would be a good reference to have while you're in the process of cooking, a map to check in and see &ldquo;You are here.&rdquo; Not bad for an hour's reading on GraphViz!

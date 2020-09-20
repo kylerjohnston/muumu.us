@@ -19,50 +19,50 @@ In addition to his issues getting along with Tiggy, Bobby also has issues gettin
 So we decided last week that we needed to re-evaluate what we've been doing and come up with a new plan. We met with a veterinary behaviorist on Thursday, and this is the plan we came up with.
 
 
-# Background
+## Background
 
 
-## Bobby
+### Bobby
 
 Bobby is a 2-5 year old tomcat, neutered. He was neutered a couple days before we adopted him, about 7 weeks ago. He is very intelligent and inquisitive, and quick to pick up things like clicker training and food puzzles. He gets overstimulated easily and will hit and bite. Bobby started the fight with Tiggy a couple weeks ago.
 
 
-## Tiggy
+### Tiggy
 
 Tiggy is an 8 year old spayed female calico. She gets scared easily, and has difficulty with puzzles --- she tends to give up if she can't immediately get the food out.
 
 
-# The re-introduction plan
+## The re-introduction plan
 
 
-## Develop a schedule to feed them 5-6 times a day together
+### Develop a schedule to feed them 5-6 times a day together
 
 We were feeding the cats three meals a day --- two meals of wet food in the morning and evening, and a meal of dry food for lunch. We had only really been doing the feed-at-the-study-door routine for the evening meal.
 
 The new plan is organized around changing this feeding and socializiation period, and is multifacted.
 
 
-### 1. All meals must be fed together
+#### 1. All meals must be fed together
 
 We want each cat to associate the other cat with positive emotions, and to develop a "colony scent" where they always smell each other when they're eating. We'll start by feeding them on opposite sides of the study door like before. We're replacing the velcro screen with two baby gates stacked on top of each other and a sheet draped over them. When the cats are comfortable eating right up against the closed door, we'll start feeding them with the door open but baby gates in place, and slowly start raising the sheet as they get comfortable with it so they can see each other while eating. Eventually the sheet will come off, and once they're comfortable with that we'll remove the gate.
 
 
-### 2. Feed them more often
+#### 2. Feed them more often
 
 The more frequently we can get them interacting in a positive way, the faster they will acclimate to each other. Especially since Jami and I are both home full time now, we are going to feed them as much as possible. Cats also like consistency, so we've developed a schedule where we'll feed them six times a day at the same times each day. I've set up notifications in Google Calendar to remind me.
 
 
-### 3. Give their meals with a variety of food puzzles
+#### 3. Give their meals with a variety of food puzzles
 
 This will have two benefits: it gives the cats something to focus on aside from each other, and it slows down their feeding so that they get to spend more time interacting in a positive way. We have two kinds of food puzzles already, two egg-shaped toys that you fill with kibble and the cats bat around to get it out, and an adjustable "maze" that the cats have to reach their paws into to pull the kibble out. We ordered three more kinds of puzzles on Amazon that should be arriving next week --- our goal is that each cat will get a different puzzle every time they eat.
 
 
-### 4. Feed them on scent blankets
+#### 4. Feed them on scent blankets
 
 Or pillowcases, in our case. We have two old pillowcases labeled "Smells like Bobby" and "Smells like Tiggy." Before each feeding session we will rub it on the appropriate cat's cheeks and lips to pick up their scene, and then feed the other cat on top of it.
 
 
-## Clicker training
+### Clicker training
 
 The New Hampshire SPCA had already started clicker training Bobby using Jackson Galaxy's *Cat Pawsitive* program.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> We tried continuing that training after we adopted him, but admittedly slacked off. We are re-starting his training by focusing on targeting,<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup><sup>, </sup><sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup><sup>, </sup><sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> and then teaching him to go to a mat.<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup><sup>, </sup><sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup><sup>, </sup><sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup> We've bought a bath mat from Amazon that is going to be Bobby's dedicated mat.
 
@@ -73,20 +73,20 @@ We've also started targeting training with Tiggy too.
 We're still trying to work out a schedule for this because we're not sure what the frequency should be. We've been doing 2-3 5 minute training sessions per day with each cat. We're not sure if this is enough or not --- we emailed the behaviorist for guidance.
 
 
-## Medication and pheromones
+### Medication and pheromones
 
 Tiggy is already on Prozac. We've started giving Bobby an L-theanine supplement called Anxitane at the behaviorist's recommendation. She thinks it might take his edge off.
 
 We had one Feliway multicat diffuser that I've been rotating in and out of the study and bedroom, depending on where Bobby was (the diffuser followed Bobby). I've learned this is not the right way to use the diffusers though, and was probably making it ineffective. The diffusers need time to saturate an area --- they need to be left in place. We've ordered more diffusers and now have three running full-time throughout the apartment. The whole place should be saturated with pheromones.
 
 
-## Develop metrics to monitor progress
+### Develop metrics to monitor progress
 
 We want to develop a set of metrics that we can use to measure progress: it will help us give better info about where the cats are at to our behaviorist, and it will help us know when it's time to move to the next step in our progression (opening the door, raising the sheet, etc.).
 
 We're going to use Kassler and Turner's *Cat Stress Score*<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup> to code each cat's behavior during feedings. I'm going to write weekly progress reports where I look at the last week's data to get a sense of what's going on.
 
-# Footnotes
+## Footnotes
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> [http://www.thejacksongalaxyproject.org/About-Us/Programs/Cat-Pawsitive](http://www.thejacksongalaxyproject.org/About-Us/Programs/Cat-Pawsitive ).
 
@@ -102,4 +102,4 @@ We're going to use Kassler and Turner's *Cat Stress Score*<sup><a id="fnr.8" cla
 
 <sup><a id="fn.7" href="#fnr.7">7</a></sup> *Smokey*. <https://youtu.be/cWw2tOJ9ZSY>.
 
-<sup><a id="fn.8" href="#fnr.8">8</a></sup> *Cat Stress Score* (pdf). <https://www.maddiesfund.org/Documents/Resource%20Library/Pet%20Behavior%20Solutions%20-%20Cat%20Stress%20Score.pdf>.
+<sup><a id="fn.8" href="#fnr.8">8</a></sup> *Cat Stress Score* (pdf). (Link dead)

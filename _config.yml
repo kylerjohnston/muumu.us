@@ -17,6 +17,8 @@ exclude:
   - invalidate_cloudfront_cache.sh
   - README.org
   - bundle/
+  - _src/
+  - _org/
 
 include: [_pages]
 

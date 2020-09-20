@@ -83,7 +83,7 @@ pre {
 
 code {
   font-family: $monospace;
-  font-size: $font-size-base;
+  font-size: $font-size-small;
   line-height: inherit;
   margin: $md-pad 0;
   padding: 0;
@@ -127,7 +127,9 @@ blockquote {
 }
 
 figcaption {
-  font-family: $serif;
+  font-family: $sans-serif;
+  font-style: italic;
+  font-size: $font-size-small;
 }
 
 u {

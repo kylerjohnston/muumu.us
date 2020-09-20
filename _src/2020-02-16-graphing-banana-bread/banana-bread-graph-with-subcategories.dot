@@ -1,0 +1,36 @@
+digraph {
+bgcolor="transparent";
+subgraph cluster_bananas {
+label="Banana stuff";
+"Defrost bananas" -> "Peel bananas";
+"Peel bananas" -> "Microwave bananas";
+"Microwave bananas" -> "Drain bananas";
+"Drain bananas" -> "Reduce banana liquid";
+}
+
+subgraph cluster_wet {
+label="Wet ingredients";
+"Drain bananas" -> "Mix wet ingredients";
+"Reduce banana liquid" -> "Mix wet ingredients";
+"Melt butter" -> "Mix wet ingredients";
+"Eggs" -> "Mix wet ingredients";
+"Brown sugar" -> "Mix wet ingredients";
+"Vanilla" -> "Mix wet ingredients";
+}
+
+subgraph cluster_dry {
+label="Dry ingredients";
+"Flour" -> "Mix dry ingredients";
+"Baking soda" -> "Mix dry ingredients";
+"Salt" -> "Mix dry ingredients";
+}
+
+subgraph cluster_assembly {
+label="Assemble and bake";
+"Heat oven" -> "Bake";
+"Mix dry ingredients" -> "Mix batter";
+"Mix batter" -> "Assemble in pan";
+"Assemble in pan" -> "Bake";
+"Mix wet ingredients" -> "Mix batter";
+}
+}

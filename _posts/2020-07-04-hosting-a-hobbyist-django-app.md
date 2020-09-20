@@ -17,7 +17,8 @@ I initially wanted to deploy the app to ECS or EKS fronted by an ALB and Postgre
 
 So I came up with this basic network design instead:
 
-![img](/img/journal_app_network_diagram.svg "Network diagram.")
+{% include image.html url="/img/2020-07-04-hosting-a-hobbyist-django-app/journal_app_network_diagram.svg"
+description="Basic network diagram." %}
 
 A single t2.nano runs the Django app in a Docker container and nginx as a reverse proxy. Another t2.nano runs PostgreSQL (~$4.18/month compared to ~$13/month for the lowest tier RDS PostgreSQL). Static assets are served out of S3. The nginx/docker box pulls container images from ECR, which is free for up to 500MB of storage. Both t2.nanos are on demand for now, while I figure out how well they handle the load.
 
@@ -38,7 +39,7 @@ I may be able to save some money by putting Cloudfront in front of the S3 bucket
 
 Now that I'm writing this up I wonder if I should just install the ECS agent on the nginx/docker box and see if I can use ECS to start tasks. Easier than manually pulling and deploying from ECR. I think I'm gonna try that.
 
-# Footnotes
+## Footnotes
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> <https://aws.amazon.com/elasticloadbalancing/pricing/>
 
