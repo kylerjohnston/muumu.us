@@ -19,7 +19,7 @@ task :test do
     hydra: {
       # Failing with timeouts if this is not set.
       # This number could be finessed more, if I need to speed up tests.
-      max_concurrency: 5
+      max_concurrency: 3
     }
   }
   HTMLProofer.check_directory("./_site", options).run
