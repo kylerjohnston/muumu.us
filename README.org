@@ -2,7 +2,7 @@
 
 This is my personal website, hosted at https://muumu.us.
 
-It is generated with Jekyll. Styling is based on
+It is generated with Jekyll.
 
 ** License
 All content is released under a [[https://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license]].
