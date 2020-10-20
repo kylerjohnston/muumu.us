@@ -21,3 +21,5 @@ These are the principles of muumu.us:
 The site is static HTML generated from Markdown using [Jekyll](https://jekyllrb.com/ "Jekyll"). The source code is in a [public GitHub repository](https://github.com/kylerjohnston/muumu.us "kylerjohnston/muumu.us on GitHub"). The styling is based upon [the Marx classless CSS reset](https://mblode.github.io/marx/ "Marx - The classless CSS reset") by Matthew Blode. It's hosted in an S3 bucket, fronted by CloudFront.
 
 All content is released under the terms of a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license](https://creativecommons.org/licenses/by-nc-sa/4.0/ "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)") unless otherwise noted.
+
+You can contact me at <`kyle at muumu dot us`>.
