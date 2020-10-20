@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'html-proofer'
+require 'date'
 
 task :test do
   sh "bundle exec jekyll build"
@@ -28,4 +29,21 @@ end
 task :publish do
   sh './push_to_s3.sh'
   sh './invalidate_cloudfront_cache.sh'
+end
+
+task :new do
+  today = Date.today.strftime('%Y-%m-%d')
+  filename = "_posts/#{today}-new-post.md"
+  header = <<~END
+  ---
+  title:
+  date: #{today}
+  layout: post
+  excerpt:
+  tags:
+  - tag1
+  ---
+  END
+  File.write(filename, header, mode: "a")
+  puts "Wrote #{filename}"
 end
