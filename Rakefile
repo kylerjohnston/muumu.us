@@ -32,12 +32,12 @@ task :publish do
 end
 
 task :new do
-  today = Date.today.strftime('%Y-%m-%d')
-  filename = "_posts/#{today}-new-post.md"
+  today = Date.today
+  filename = "_drafts/#{today.strftime('%s')}.md"
   header = <<~END
   ---
-  title:
-  date: #{today}
+  title: NEEDS A TITLE
+  date: #{today.strftime('%Y-%m-%d')}
   layout: post
   excerpt:
   tags:
