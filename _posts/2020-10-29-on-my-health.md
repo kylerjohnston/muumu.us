@@ -2,10 +2,11 @@
 title: On my health
 date: 2020-10-29
 layout: post
-excerpt:
+excerpt: "I've spent the last couple weeks doing medical things. I was diagnosed with Behçet's disease a few years ago, an autoimmune inflammatory condition affecting the vascular system, which causes issues like uveitis, joint and muscle pain, mouth ulcers, and skin lesions. It's been treated with monthly infusions of Remicade for the past two years, which has alleviated almost all of my symptoms for the price of something like $25,000 billed to my insurance per infusion."
 tags:
 - health
 - behcets
+- yoga
 ---
 
 I've spent the last couple weeks doing medical things. I was diagnosed with
@@ -29,7 +30,7 @@ flares kept returning, so eventually I was moved to Remicade and
 [azathioprine](https://en.wikipedia.org/wiki/Azathioprine "Azathioprine -
 Wikipedia").
 
-The last the couple years, with the Remicade infusions, I've been mostly symptom
+The last couple years, with the Remicade infusions, I've been mostly symptom
 free. In July, after two years without any major flares and with no visible
 inflammation in my retinas or ocular nerves, my rheumatologist, ophthalmologist,
 and I decided to try tapering off the Remicade, lowering my dosage by a third,
