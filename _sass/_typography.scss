@@ -91,6 +91,11 @@ code {
   word-wrap: normal;
 }
 
+code.language-plaintext {
+  background-color: $grey;
+  padding: $xs-pad;
+}
+
 a {
   color: $link-color;
   text-decoration: none;
