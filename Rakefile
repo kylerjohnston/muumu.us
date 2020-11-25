@@ -2,6 +2,7 @@
 
 require 'html-proofer'
 require 'date'
+require 'rake/testtask'
 
 task :test do
   sh "bundle exec jekyll build"
@@ -23,6 +24,10 @@ task :test do
       max_concurrency: 3
     }
   }
+
+  Rake::TestTask.new do |task|
+    task.pattern = '_test/*.rb'
+  end
   HTMLProofer.check_directory("./_site", options).run
 end
 

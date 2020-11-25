@@ -55,6 +55,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     mini_portile2 (2.4.0)
+    minitest (5.14.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     nokogumbo (2.0.2)
@@ -88,6 +89,8 @@ DEPENDENCIES
   jekyll
   jekyll-archives
   kramdown-parser-gfm
+  minitest
+  nokogiri
   rake
 
 RUBY VERSION
