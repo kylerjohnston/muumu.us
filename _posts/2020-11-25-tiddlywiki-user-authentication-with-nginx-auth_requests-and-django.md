@@ -1,8 +1,8 @@
 ---
 title: TiddlyWiki user authentication with NGINX auth_requests and Django
-date: 2020-11-14
+date: 2020-11-25
 layout: post
-excerpt:
+excerpt: "I chose TiddlyWiki for its great user interface, despite some other deficiencies that made it a less than ideal choice for the project, like only supporting HTTP basic authentication. Using public-notes over the past couple months, the basic auth flow stands out as a real pain point in an otherwise smooth experience."
 tags:
 - tiddlywiki
 - django
@@ -12,16 +12,15 @@ tags:
 
 In September I started work on
 [public-notes.muumu.us](https://public-notes.muumu.us "public-notes.muumu.us"),
-a project to create a personal knowledge base and publish it on the public
-internet. I chose [TiddlyWiki](https://tiddlywiki.com/ "TiddlyWiki") for the
-project for reasons I outlined in an earlier post, [*Building an internet-facing
-TiddlyWiki for my public second brain*]({% post_url
-2020-09-06-building-a-public-tiddlywiki %} "Building an internet-facing
-TiddlyWiki for my public second brain - muumu.us"). TiddlyWiki's
-non-heirarchical approach to note taking is unique and I find its ergonomics
-mesh much better with my thought process than a traditional wiki or something
-like Evernote. It is one of a very few pieces of software that feels completely
-effortless to use.
+a project to create a personal knowledge base and publish it on the internet. I
+chose [TiddlyWiki](https://tiddlywiki.com/ "TiddlyWiki") for the project for
+reasons I outlined in an earlier post, [*Building an internet-facing TiddlyWiki
+for my public second brain*]({% post_url 2020-09-06-building-a-public-tiddlywiki
+%} "Building an internet-facing TiddlyWiki for my public second brain -
+muumu.us"). TiddlyWiki's non-hierarchical approach to note taking is unique and
+I find its ergonomics mesh much better with my thought process than a
+traditional wiki or something like Evernote. It is one of a very few pieces of
+software that feels completely effortless to use.
 
 So I chose TiddlyWiki for its great user interface, despite some other
 deficiencies that made it a less than ideal choice for the project, like only
@@ -47,7 +46,7 @@ sounded like a good solution, but I ran into a problem described [in an issue on
 the project's GitHub](https://github.com/stevenleeg/twproxy/issues/6 "TW
 returning 403 on attempted save") where the TiddlyWiki would only render for an
 instant before throwing a `Sync error while processing '$:/StoryList'`. I spent
-an hour or so starting to fix it last Saturday, but fixing that one bug revealed
+an hour or so starting to fix it one Saturday, but fixing that one bug revealed
 another and I started falling down a rabbit hole of trying to fix outdated
 dependencies. I lost motivation when I saw there was already a pull request on
 the project that purported to fix the issue, open and untouched for three
@@ -105,7 +104,6 @@ location = /auth/ {
     proxy_pass   http://127.0.0.1:8000;
     proxy_pass_request_body off;
     proxy_set_header Content-Length "";
-    proxy_set_header X-Original-URI $request_uri;
 }
 
 location = /accounts/login/ {
@@ -114,18 +112,14 @@ location = /accounts/login/ {
 ```
 
 The `internal` keyword tells NGINX this endpoint is not accessible to external
-requests --- a user trying to navigate to
-https://my-tiddly-wiki-domain.com/auth/ will get a `404`; only our NGINX proxy
-can send requests there.
+requests --- a user trying to navigate to https://tiddlywiki.example.com/auth/
+will get a `404`; only our NGINX proxy can send requests there.
 
 I also drop the request body because the authentication service doesn't need
-that data. The `X-Original-URI` header isn't really needed at this point, but
-I'm passing it along here because in a future version of the authentication
-service I'd like to have it use that header to redirect after a succesful log
-in.
+that data. 
 
 Then I updated the location block for TiddlyWiki to use the `auth_request`
-module.
+module --- I have TiddlyWiki running on port `8080` on the same host.
 
 ```
 location / {
@@ -154,3 +148,6 @@ location @error401 {
 ```
 
 This means in the event of a `401`, we will redirect users to the log in page.
+
+And that's it. I've had it running for a couple weeks now and the user
+experience is much nicer than basic auth. My password manager works!
