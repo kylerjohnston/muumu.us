@@ -1,5 +1,5 @@
 ---
-title: On my health
+title: For your health
 date: 2020-10-29
 layout: post
 excerpt: "I've spent the last couple weeks doing medical things. I was diagnosed with Behçet's disease a few years ago, an autoimmune inflammatory condition affecting the vascular system, which causes issues like uveitis, joint and muscle pain, mouth ulcers, and skin lesions. It's been treated with monthly infusions of Remicade for the past two years, which has alleviated almost all of my symptoms for the price of something like $25,000 billed to my insurance per infusion."
