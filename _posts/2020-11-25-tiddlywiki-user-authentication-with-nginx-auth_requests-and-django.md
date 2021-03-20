@@ -3,6 +3,7 @@ title: TiddlyWiki user authentication with NGINX auth_requests and Django
 date: 2020-11-25
 layout: post
 excerpt: "I chose TiddlyWiki for its great user interface, despite some other deficiencies that made it a less than ideal choice for the project, like only supporting HTTP basic authentication. Using public-notes over the past couple months, the basic auth flow stands out as a real pain point in an otherwise smooth experience."
+updated: 2021-03-20
 tags:
 - tiddlywiki
 - django
@@ -11,7 +12,7 @@ tags:
 ---
 
 In September I started work on
-[public-notes.muumu.us](https://public-notes.muumu.us "public-notes.muumu.us"),
+public-notes.muumu.us (since taken down),
 a project to create a personal knowledge base and publish it on the internet. I
 chose [TiddlyWiki](https://tiddlywiki.com/ "TiddlyWiki") for the project for
 reasons I outlined in an earlier post, [*Building an internet-facing TiddlyWiki

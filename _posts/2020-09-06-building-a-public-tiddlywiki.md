@@ -13,15 +13,15 @@ tags:
 
 ## Introduction
 
-For the past few weeks, in my free time, I've been working on [public-notes.muumu.us](https://public-notes.muumu.us).
+For the past few weeks, in my free time, I've been working on public-notes.muumu.us[^1].
 
-The goal of this project is to create a public digital repository for all of my knowledge --- project notes, one-off thoughts, bookmarks, lists of books I've read or want to read, etc. Something like a digital [commonplace book](https://en.wikipedia.org/wiki/Commonplace_book). I see it as both a productivity hack (a great way to take and find notes) and a literary project.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+The goal of this project is to create a public digital repository for all of my knowledge --- project notes, one-off thoughts, bookmarks, lists of books I've read or want to read, etc. Something like a digital [commonplace book](https://en.wikipedia.org/wiki/Commonplace_book). I see it as both a productivity hack (a great way to take and find notes) and a literary project[^2].
 
 I evaluated many software options for the project and ultimately ended up choosing [TiddlyWiki](https://tiddlywiki.com/) because:
 
 -   It's open source, and I can host it myself;
 -   Its interface and organizational model privilege the individual *note*, compared to the category-first model of basically all other wiki software;
--   David Gifford's [Stroll](https://giffmex.org/stroll/stroll.html) plugin gives it backlinks and transclusions to make an experience which closely resembles [Roam](https://roamresearch.com/), which would probably have been my choice for a platform if it was open source and could be self-hosted.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+-   David Gifford's [Stroll](https://giffmex.org/stroll/stroll.html) plugin gives it backlinks and transclusions to make an experience which closely resembles [Roam](https://roamresearch.com/), which would probably have been my choice for a platform if it was open source and could be self-hosted[^3].
 
 In the rest of this post I'll describe the several approaches I took to implement this public TiddlyWiki, the final solution I ended up implementing, and my thoughts on where the site will go from here.
 
@@ -32,7 +32,7 @@ TiddlyWiki is a weird piece of software. Older iterations of it shipped as a sin
 
 TiddlyWiki5 is a ["reboot of TiddlyWiki for the next 25 years"](https://tiddlywiki.com/#TiddlyWiki5 "TiddlyWiki5 - a reboot of TiddlyWiki") which can also run as a Node.js application in a client-server model. Running in this mode, TiddlyWiki stores each note (or "tiddler", in TW-speak) in a separate text file, using a custom markup DSL that's close to, but not, markdown, and the node process renders those tiddlers into the page you see in your browser. Any changes you make on the client side are pushed to the server. It has some basic user management and access control features.
 
-My initial plan was to host a single TiddlyWiki5 Node.js app that would allow read-write access to authenticated users (me), and read-only access to everyone else. Ultimately this approach didn't work, for reasons I'll get into in the sections below, and I ended up with a Node.js app that I write to and a separate, single-HTML-file static TiddlyWiki rendered from the Node.js app that I serve at [public-notes.muumu.us](https://public-notes.muumu.us "public-notes.muumu.us").
+My initial plan was to host a single TiddlyWiki5 Node.js app that would allow read-write access to authenticated users (me), and read-only access to everyone else. Ultimately this approach didn't work, for reasons I'll get into in the sections below, and I ended up with a Node.js app that I write to and a separate, single-HTML-file static TiddlyWiki rendered from the Node.js app that I serve at public-notes.muumu.us[^5].
 
 ### Docker was a bad choice
 I first tried running TiddlyWiki in a Docker container. I had Docker on the mind. I use it and ECS heavily at work, and have found them together to be a good and relatively simple solution for deploying and scaling applications. Just a couple weeks earlier I had worked out [a good system for deploying a Dockerized Django app to EC2]({% post_url 2020-07-04-hosting-a-hobbyist-django-app %}) for my own projects. My thinking was that Docker would:
@@ -132,7 +132,7 @@ tiddlywiki wiki --listen host=localhost \
 
 This should allow users who are authenticated (me) to edit the TiddlyWiki, and unauthenticated users to read it.
 
-I discovered that the writer's active tiddlers --- the notes I had open on my screen as an authenticated user --- would also show up as the active tiddlers for the anonymous readers. If I was drafting a note, that note would show up as the active tiddler for all the anonymous readers. TiddlyWiki seemed to be sharing the writer's state with all other users.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>
+I discovered that the writer's active tiddlers --- the notes I had open on my screen as an authenticated user --- would also show up as the active tiddlers for the anonymous readers. If I was drafting a note, that note would show up as the active tiddler for all the anonymous readers. TiddlyWiki seemed to be sharing the writer's state with all other users[^4].
 
 So I pivoted to a new idea: I'd run two TiddlyWiki processes, one for private editing access and one for public read-only access.
 
@@ -191,7 +191,7 @@ jobs:
         run: aws s3 cp ./output/index.html s3://public-notes.muumu.us
 ```
 
-So I ended up with two sites. The private site uses Node.js running on a t3a.micro EC2 instance. The pubic site, [public-notes.muumu.us](https://public-notes.muumu.us "public-notes.muumu.us"), is a single HTML file served from S3, fronted by CloudFront.
+So I ended up with two sites. The private site uses Node.js running on a t3a.micro EC2 instance. The pubic site, public-notes.muumu.us, is a single HTML file served from S3, fronted by CloudFront.
 
 
 ### Estimated costs
@@ -224,8 +224,12 @@ For now, TiddlyWiki does the job and allows me to push out an MVP of the public-
 
 ## Footnotes
 
-<sup><a id="fn.1" href="#fnr.1">1</a></sup> Maybe even a metaphysical project, if I train GPT-*n* on it.
+[^1]: I've since take this site down.
 
-<sup><a id="fn.2" href="#fnr.2">2</a></sup> After using TiddlyWiki for the past month, though, I've come to love it and don't see any reason to switch to Roam.
+[^2]: Maybe even a metaphysical project, if I train GPT-*n* on it.
 
-<sup><a id="fn.3" href="#fnr.3">3</a></sup> At the time I didn't have any default tiddlers set --- I don't know if doing that would fix this issue or not.
+[^3]: After using TiddlyWiki for the past month, though, I've come to love it and don't see any reason to switch to Roam.
+
+[^4]: At the time I didn't have any default tiddlers set --- I don't know if doing that would fix this issue or not.
+
+[^5]: Again, taken down now.
