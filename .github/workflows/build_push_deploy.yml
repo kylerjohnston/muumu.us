@@ -42,6 +42,6 @@ jobs:
       - name: Deploy
         if: github.event_name == 'push'
         run: |
-          aws sync --delete _site/ s3://muumu.us
+          aws s3 sync --delete _site/ s3://muumu.us
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CF_DISTRO_ID }} --paths "/*"
