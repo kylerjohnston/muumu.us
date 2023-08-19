@@ -1,6 +1,9 @@
-name: Tests
+name: Build, test, push
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -25,5 +28,11 @@ jobs:
             ${{ runner.os }}-gems-
       - name: Install dependencies
         run: bundle install
+      - name: build
+        run: bundle exec jekyll build
       - name: Run tests
         run: bundle exec rake test
+        if: github.event_name == 'pull_request'
+      - name: Deploy
+        run: bundle exec rake publish
+        if: github.event_name == 'push'
