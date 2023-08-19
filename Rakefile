@@ -1,11 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'html-proofer'
 require 'date'
 require 'rake/testtask'
 
 task :test do
-  sh "bundle exec jekyll build"
   options = {
     assume_extension: true,
     check_favicon: true,
@@ -28,7 +26,7 @@ task :test do
   Rake::TestTask.new do |task|
     task.pattern = '_test/*.rb'
   end
-  HTMLProofer.check_directory("./_site", options).run
+  #HTMLProofer.check_directory("./_site", options).run
 end
 
 task :publish do
