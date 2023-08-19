@@ -20,6 +20,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7.2'
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          region: us-east-1
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
@@ -34,5 +40,8 @@ jobs:
         run: bundle exec rake test
         if: github.event_name == 'pull_request'
       - name: Deploy
-        run: bundle exec rake publish
         if: github.event_name == 'push'
+        run: |
+          aws sync --delete _site/ s3://muumu.us
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CF_DISTRO_ID }} --paths "/*"

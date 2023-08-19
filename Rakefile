@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'html-proofer'
 require 'date'
 require 'rake/testtask'
 
