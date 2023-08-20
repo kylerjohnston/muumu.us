@@ -19,19 +19,14 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.2'
+          ruby-version: '2.7.8'
+          bundler-cache: true
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: us-east-1
-      - uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
       - name: Install dependencies
         run: bundle install
       - name: build
@@ -42,6 +37,6 @@ jobs:
       - name: Deploy
         if: github.event_name == 'push'
         run: |
-          aws sync --delete _site/ s3://muumu.us
+          aws s3 sync --delete _site/ s3://muumu.us
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CF_DISTRO_ID }} --paths "/*"
